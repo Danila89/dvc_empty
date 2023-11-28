@@ -1,0 +1,4 @@
+[hydra]
+    enabled = true
+    config_dir = hydra
+    config_name = config.yaml
