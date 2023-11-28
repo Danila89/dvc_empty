@@ -1,5 +1,5 @@
 stages:
   main:
     cmd:
-      - echo "command"
+      - python script.py
     outs: []
