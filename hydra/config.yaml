@@ -1,1 +1,2 @@
-parameter_name: parameter_value
+parameters:
+  parameter_name: parameter_value

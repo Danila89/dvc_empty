@@ -1,5 +1,5 @@
 stages:
   main:
     cmd:
-      - python script.py
+      - echo ${parameters.parameter_name} && python script.py
     outs: []
