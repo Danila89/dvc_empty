@@ -1,0 +1,5 @@
+schema: '2.0'
+stages:
+  main:
+    cmd:
+    - echo parameter_value && python script.py
