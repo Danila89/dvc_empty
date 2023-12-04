@@ -1,5 +1,23 @@
 stages:
-  main:
+  stage1:
     cmd:
-      - echo ${parameters.parameter_name} && python script.py
+      - echo ${parameters.parameter_name} && python script.py && touch 1.txt
+    deps:
+      - script.py
+    params:
+      - parameters.parameter_name
+    outs:
+      - 1.txt
+  stage2:
+    cmd:
+      - echo stage2 && touch 2.txt
+    deps:
+      - 1.txt
+    outs:
+      - 2.txt
+  stage3:
+    cmd:
+      - echo stage3
+    deps:
+      - 2.txt
     outs: []
