@@ -1,0 +1,39 @@
+schema: '2.0'
+stages:
+  stage1:
+    cmd:
+    - echo parameter_value && python script.py && touch 1.txt
+    deps:
+    - path: script.py
+      hash: md5
+      md5: b4f3f4b5426182a056df159a5b451c23
+      size: 142
+    params:
+      params.yaml:
+        parameters.parameter_name: parameter_value
+    outs:
+    - path: 1.txt
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+  stage2:
+    cmd:
+    - echo stage2 && touch 2.txt
+    deps:
+    - path: 1.txt
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+    outs:
+    - path: 2.txt
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+  stage3:
+    cmd:
+    - echo stage3
+    deps:
+    - path: 2.txt
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
