@@ -3,3 +3,5 @@ stages:
     cmd:
       - echo ${parameters.parameter_name} && python script.py && echo "The stage is done by now, here is a success message\n"
     outs: []
+params:
+- dvclive/params.yaml
